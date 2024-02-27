@@ -1,0 +1,21 @@
+﻿<Page x:Class="Airhub.pages.testPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Airhub.pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="636"
+      Title="testPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Column="10">Name:</TextBlock>
+        <TextBox Grid.Column="1" x:Name="NameBox" HorizontalAlignment="Stretch" />
+        <Button Grid.Column="0" Command="{Binding SubmitCommand}">Submit</Button>
+    </Grid>
+</Page>
