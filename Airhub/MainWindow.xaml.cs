@@ -42,7 +42,8 @@ namespace Airhub
         private void login(object sender, RoutedEventArgs e)
         {
             Window2 nw = new Window2();
-            nw.Show();  
+            nw.Show();
+            this.Close();
 
         }
 
