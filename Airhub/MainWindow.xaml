@@ -9,66 +9,11 @@
         WindowState="Maximized" >
 
 
-    <Window.Resources>
-        <Style x:Key="RoundedButtonStyle" TargetType="Button">
-            <Setter Property="FontSize" Value="50"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="Background" Value="#d9d9d9"/>
-            <Setter Property="Foreground" Value="Black"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}"
-                        BorderBrush="{TemplateBinding BorderBrush}"
-                        BorderThickness="{TemplateBinding BorderThickness}"
-                        CornerRadius="40">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Window.Resources>
 
 
-    <Grid Background="#15152c" x:Name="MainGrid">
+    <Grid Background="#15152c" x:Name="MainGrid" Width="1920" Height="1080">
 
-        <Grid.RowDefinitions>
-
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-
-        </Grid.ColumnDefinitions>
-
-
-        <Image Name="bg" Source="/img/bg.png" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="10" Grid.RowSpan="8"/>
-
-        <Rectangle Stroke="Yellow" RadiusX="50" RadiusY="50" Fill="Orange" HorizontalAlignment="Left" Width="442" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="4" Margin="241,63,0,138" Grid.Row="1"/>
-
-        <TextBlock HorizontalAlignment="Center" Text="AIЯHUB" VerticalAlignment="Top" FontSize="300" FontWeight= "Heavy" Foreground="White" Grid.Row="1" Grid.ColumnSpan="10" Grid.RowSpan="5"/>
-
-        <TextBlock HorizontalAlignment="Center" Foreground="White" FontSize="55" Text="The Voice Assisant AI" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="4" Grid.RowSpan="2" />
-
-        <Button Content="Login" Style="{StaticResource RoundedButtonStyle}" Click="login" Grid.Row="5" Grid.Column="2" />
-        <Button Content="Sign Up" Style="{StaticResource RoundedButtonStyle}" Click="login" Grid.Row="5" Grid.Column="5" />
+        
     </Grid>
 
 

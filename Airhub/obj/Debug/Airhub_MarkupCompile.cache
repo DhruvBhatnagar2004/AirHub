@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Cypher\source\repos\Airhub\Airhub\App.xaml
-3-781864860
+8859972803
 21562724172
-7934509830
+13920757634
 37463960100
-MainWindow.xaml;pages\nextPage.xaml;pages\testPage.xaml;
+MainWindow.xaml;pages\Bot.xaml;pages\home.xaml;pages\LoginPage.xaml;pages\nextPage.xaml;pages\SignupPage.xaml;pages\Styles.xaml;pages\testPage.xaml;
 
 False
 

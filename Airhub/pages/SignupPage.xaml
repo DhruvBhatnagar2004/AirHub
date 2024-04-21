@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="Airhub.pages.SignupPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Airhub.pages"
+             mc:Ignorable="d" 
+                          d:DesignHeight="1080" d:DesignWidth="1920">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid x:Name="login_page" Background="#15152c" Width="1920" Height="1080">
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+
+        </Grid.ColumnDefinitions>
+
+        <Image Name="bg" Source="/img/2.png" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="100" Grid.RowSpan="100"/>
+
+        <TextBox Grid.ColumnSpan="5" Grid.Column="4"  Grid.Row="8" Grid.RowSpan="2" Style ="{StaticResource RoundedTextBox}" TextChanged="TextBox_TextChanged" Text="Name"  Name="Name" GotFocus="TextBox_GotFocus" />
+        <TextBox Grid.ColumnSpan="5" Grid.Column="4"  Grid.Row="11" Grid.RowSpan="2" Style ="{StaticResource RoundedTextBox}" TextChanged="TextBox_TextChanged" Text="Username"  Name="Username" GotFocus="TextBox_GotFocus" />
+        <TextBox Grid.ColumnSpan="5" Grid.Column="4"  Grid.Row="14" Grid.RowSpan="2" Style ="{StaticResource RoundedTextBox}" TextChanged="TextBox_TextChanged" Text="Password"  Name="accPass" GotFocus="TextBox_GotFocus" />
+        <PasswordBox Grid.ColumnSpan="5" Grid.Column="4"  Grid.Row="17" Grid.RowSpan="2" Style="{StaticResource RoundedPasswordBox}" Name="password" GotFocus="TextBox_GotFocus" />
+        <Button Content="Sign up" Style="{StaticResource RoundedButtonStyle}" Click="signUser" Grid.Row="20" Grid.Column="5" Grid.ColumnSpan="3" Grid.RowSpan="2" />
+
+
+    </Grid>
+</UserControl>

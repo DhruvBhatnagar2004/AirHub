@@ -122,6 +122,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="files\DbConnection.cs" />
+    <Compile Include="files\RunProg.cs" />
+    <Compile Include="pages\Bot.xaml.cs">
+      <DependentUpon>Bot.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\home.xaml.cs">
+      <DependentUpon>home.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="pages\nextPage.xaml.cs">
       <DependentUpon>nextPage.xaml</DependentUpon>
     </Compile>
@@ -137,8 +148,27 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="pages\Bot.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pages\home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pages\LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="pages\nextPage.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pages\SignupPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pages\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="pages\testPage.xaml">
@@ -147,6 +177,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="pages\SignupPage.xaml.cs">
+      <DependentUpon>SignupPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="pages\testPage.xaml.cs">
       <DependentUpon>testPage.xaml</DependentUpon>
     </Compile>
@@ -183,6 +216,7 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="img\bg.png" />
+    <Resource Include="img\2.png" />
     <Content Include="mongocrypt.dll" />
   </ItemGroup>
   <ItemGroup />

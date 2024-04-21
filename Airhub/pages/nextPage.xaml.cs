@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using Airhub.files;
+using Airhub.pages;
+using System.Windows;
 
 namespace Airhub
 {
@@ -12,8 +14,11 @@ namespace Airhub
             InitializeComponent();
         }
 
-        private void TextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        private void StartBotClick(object sender, RoutedEventArgs e)
         {
+            Bot b = new Bot();
+            b.Show();
+            this.Close();
 
         }
     }
