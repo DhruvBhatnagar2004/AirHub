@@ -1,0 +1,85 @@
+________________________________________
+You:  write an email to dhruv bhatnagar
+ 
+AI: Dear Dhruv Bhatnagar,
+
+I hope this email finds you well.
+
+I am writing to express my interest in the [Job Title] position that I saw advertised on [Website/Platform]. With my [Number] years of experience in [Industry/Field] and my strong skills in [Skill 1, Skill 2, Skill 3], I believe I would be a valuable asset to your team.
+
+Throughout my career, I have consistently exceeded expectations in my role as [Previous Position]. I have a proven track record of [Achievements, Quantifiable Results] in the areas of [Responsibility 1, Responsibility 2, Responsibility 3]. I am particularly skilled in [Specific Skills or Software Proficiencies].
+
+Furthermore, I am an enthusiastic and results-oriented individual with a strong work ethic. I am highly adaptable, eager to learn new technologies, and passionate about delivering exceptional outcomes. I am confident that I can quickly become a contributing member of your organization.
+
+I am available for an interview at your earliest convenience. I would be delighted to discuss my qualifications further and how I can contribute to [Company Name].
+
+Thank you for your time and consideration.
+
+Sincerely,
+[Your Name] 
+
+You: Open YouTube
+
+AI: Opening YouTube
+
+You: open google chat
+ 
+________________________________________
+You:  open wikipedia
+ 
+AI: <start_of_image> in what year was the first smartphone released? 
+
+You: 
+ 
+AI: 1992 
+
+________________________________________
+AI: Hi, there, how can I help?
+You: Open YouTube
+
+AI: Opening YouTube
+
+You: Open Wikipedia
+
+AI: Opening Wikipedia
+
+You: an email to dhruv bhatnagar about job application
+ 
+You: Write email to dhruv bhatnagar about job application
+
+________________________________________
+You:  open youtube
+ 
+AI: Sorry, I can't directly open YouTube for you. I'm just a text-based chatbot assistant and don't have the ability to perform actions like opening apps or websites. 
+
+You: Write email to tirupati nagar
+
+You: i want to write something about the job application in the current scenario
+ 
+You: Write email to tripathi nagar
+
+You: write about the job application
+ 
+________________________________________
+You:  which is the biggest building in the world
+ 
+AI: Burj Khalifa 
+
+________________________________________
+AI: Hi, there, how can I help?
+You: Open YouTube
+
+AI: Opening YouTube
+
+You: Open Wikipedia
+
+AI: Opening Wikipedia
+
+You: Write email to abhigyan
+
+You: building in the world
+ 
+You: that's all jack thank you
+
+AI: Bye now. 
+
