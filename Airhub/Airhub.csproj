@@ -217,6 +217,7 @@
   <ItemGroup>
     <Resource Include="img\bg.png" />
     <Resource Include="img\2.png" />
+    <Resource Include="img\mic.png" />
     <Content Include="mongocrypt.dll" />
   </ItemGroup>
   <ItemGroup />

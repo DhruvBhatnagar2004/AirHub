@@ -38,44 +38,64 @@ namespace Airhub.pages
             Top = screenHeight - Height;
             Task.Run(async () => await RunPythonScript());
         }
+
         private async Task RunPythonScript()
         {
             try
             {
-                string pythonExe = "python"; // Assuming 'python' is in PATH, adjust if necessary
-                string pythonScript = @"D:\test.py"; // Path to your Python script
+                // Path to the named pipe
+                string pipeName = "testpipe";
 
-                ProcessStartInfo psi = new ProcessStartInfo
+                // Start the Python process
+                using (var process = new System.Diagnostics.Process())
                 {
-                    FileName = pythonExe,
-                    Arguments = pythonScript,
-                    RedirectStandardOutput = true,
-                    RedirectStandardError = true,
-                    UseShellExecute = false,
-                    CreateNoWindow = true
-                };
+                    process.StartInfo.FileName = "python"; // Assuming 'python' is in PATH
+                    process.StartInfo.Arguments = @"C:\Users\Cypher\source\repos\Airhub\python\va.py"; // Path to your Python script
+                    ///process.StartInfo.Arguments = @"D:\python\test.py"; // Path to your Python script
+                    process.StartInfo.UseShellExecute = false;
+                    process.StartInfo.RedirectStandardOutput = true;
+                    process.StartInfo.CreateNoWindow = true;
 
-                using (Process process = Process.Start(psi))
-                {
-                    Debug.WriteLine("In process");
-                    // Read the standard output of the Python process
-                    using (StreamReader reader = process.StandardOutput)
+                    /*
+                    process.OutputDataReceived += (sender, e) =>
                     {
-                        Debug.WriteLine("in using");
-                        string output = await reader.ReadToEndAsync();
-
-                        // Update text block with output
-                        Application.Current.Dispatcher.Invoke(() =>
+                        if (!String.IsNullOrEmpty(e.Data))
                         {
-                            Output.Text = output; // Replace 'outputTextBlock' with the actual name of your TextBlock element
-                        });
-                    }
+                            Application.Current.Dispatcher.Invoke(() =>
+                            {
+                                Output.Text += e.Data + Environment.NewLine; // Append output to existing text
+                            });
+                        }
+                    };
+                    
+                    process.Start();
 
-                    // Handle errors if needed
-                    string error = await process.StandardError.ReadToEndAsync();
-                    if (!string.IsNullOrEmpty(error))
+                    // Begin asynchronous read of standard output
+                    process.BeginOutputReadLine();
+
+                    // Create the named pipe server
+                    using (var pipeServer = new NamedPipeServerStream(pipeName, PipeDirection.In))
                     {
-                        MessageBox.Show("Error occurred: " + error);
+                        // Connect to the named pipe client (Python script)
+                        Debug.WriteLine("before async");
+                        await pipeServer.WaitForConnectionAsync();
+
+                        // Read output from the named pipe client
+                        using (StreamReader reader = new StreamReader(pipeServer))
+                        {
+                            Debug.WriteLine("in while");
+                            string line;
+                            while ((line = await reader.ReadLineAsync()) != null)
+                            {
+                                Debug.WriteLine("please");
+                                Application.Current.Dispatcher.Invoke(() =>
+                                {
+                                    Debug.WriteLine("fuckyou");
+                                    Output.Text += line + Environment.NewLine; // Append output to existing text
+                                });
+                            }
+                            Debug.WriteLine("fuck you while loop");
+                        }
                     }
                 }
             }
@@ -84,6 +104,46 @@ namespace Airhub.pages
                 MessageBox.Show("Exception occurred: " + ex.Message);
             }
         }
+        */
+
+
+                    process.Start();
+
+                    // Create the named pipe server
+                    using (var pipeServer = new NamedPipeServerStream(pipeName, PipeDirection.In))
+                    {
+                        // Connect to the named pipe client (Python script)
+                        Debug.WriteLine("before async");
+                        await pipeServer.WaitForConnectionAsync();
+
+                        // Read output from the named pipe client and update the UI
+                        using (StreamReader reader = new StreamReader(pipeServer))
+                        {
+                            Debug.WriteLine("in while");
+                            string line;
+                            while ((line = await reader.ReadLineAsync()) != null)
+                            {
+                                Debug.WriteLine("please");
+                                Application.Current.Dispatcher.Invoke(() =>
+                                {
+                                    Debug.WriteLine("fuckyou");
+                                    Output.Text += line + Environment.NewLine; // Append output to existing text
+                                });
+                            }
+                            Debug.WriteLine("fuck you while loop");
+                        }
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Exception occurred: " + ex.Message);
+            }
+        }
+
+
+
 
     }
 }

@@ -10,6 +10,7 @@
         WindowStyle="None"
         AllowsTransparency="True">
     <Grid>
-        <TextBlock Text="Test" Foreground="White" Background="Gray" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="50" Name="Output"/>
+        <Image Source="/img/mic.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150"/>
+        <TextBlock Text="Test" Foreground="White" Background="Black" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Name="Output"/>
     </Grid>
 </Window>

@@ -9,7 +9,11 @@ from nltk.tokenize import word_tokenize
 import google.generativeai as genai
 import webbrowser
 
-genai.configure(api_key="YOUR_API_KEY_HERE")  # Remember to replace 'your_api_key_here' with your actual API key
+import win32pipe
+import win32file
+
+
+genai.configure(api_key="AIzaSyCcSy1XJknbmO6qkLPzYgg3krvez8-Ui24")  # Remember to replace 'your_api_key_here' with your actual API key
 
 speaker = win32com.client.Dispatch("SAPI.SpVoice")
 
@@ -24,6 +28,7 @@ engine.setProperty('voice', voices[1].id)  # 0 for male; 1 for female
 
 today = str(date.today())
 model = genai.GenerativeModel('gemini-pro')
+
 
 def speak_text(text):
     engine.say(text)
@@ -56,16 +61,29 @@ def compose_email(recipient, email_content):
 def main():
     global talk, today, rec, mic
     
+    print("in main")  
     nltk.download('punkt')  # Download NLTK punkt tokenizer
     
     rec = sr.Recognizer()
     mic = sr.Microphone()
     rec.dynamic_energy_threshold = False
-    rec.energy_threshold = 400    
+    rec.energy_threshold = 400  
     
     sleeping = True 
     
-    while True:     
+    pipe_name = r'\\.\pipe\testpipe'
+    pipe_handle = win32file.CreateFile(
+        pipe_name,
+        win32file.GENERIC_WRITE,
+        0,
+        None,
+        win32file.OPEN_EXISTING,
+        0,
+        None
+    )
+    
+    while True: 
+        print("before mic")    
         
         with mic as source1:            
             rec.adjust_for_ambient_noise(source1, duration=0.5)
@@ -154,11 +172,12 @@ def main():
                 # Only one candidate for now.
                 # max_output_tokens=125) 
                 )
+                win32file.WriteFile(pipe_handle, response.text)
 
                 for chunk in response:
                     print(chunk.text, end='') 
                     speaker.speak(chunk.text.replace("*", ""))
-
+                
                 print(response.text)
                 speaker.speak(response.text.replace("*", ""))
                 print('\n')
@@ -167,9 +186,11 @@ def main():
                 # print(talk[-1]['parts'][0])                
 
                 append2log(f"AI: {response.text } \n")
- 
+
             except Exception as e:
                 continue 
- 
+
+
+
 if __name__ == "__main__":
     main()

@@ -1,4 +1,3 @@
-C:\Users\Cypher\source\repos\Airhub\Airhub\bin\Debug\mongocrypt.dll
 C:\Users\Cypher\source\repos\Airhub\Airhub\bin\Debug\Airhub.exe.config
 C:\Users\Cypher\source\repos\Airhub\Airhub\bin\Debug\Airhub.exe
 C:\Users\Cypher\source\repos\Airhub\Airhub\bin\Debug\Airhub.pdb
@@ -71,3 +70,4 @@ C:\Users\Cypher\source\repos\Airhub\Airhub\obj\Debug\pages\SignupPage.g.cs
 C:\Users\Cypher\source\repos\Airhub\Airhub\obj\Debug\pages\SignupPage.baml
 C:\Users\Cypher\source\repos\Airhub\Airhub\obj\Debug\pages\Bot.g.cs
 C:\Users\Cypher\source\repos\Airhub\Airhub\obj\Debug\pages\Bot.baml
+C:\Users\Cypher\source\repos\Airhub\Airhub\bin\Debug\mongocrypt.dll
