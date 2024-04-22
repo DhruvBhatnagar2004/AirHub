@@ -9,7 +9,7 @@ from nltk.tokenize import word_tokenize
 import google.generativeai as genai
 import webbrowser
 
-genai.configure(api_key="AIzaSyCcSy1XJknbmO6qkLPzYgg3krvez8-Ui24")  # Remember to replace 'your_api_key_here' with your actual API key
+genai.configure(api_key="YOUR_API_KEY_HERE")  # Remember to replace 'your_api_key_here' with your actual API key
 
 speaker = win32com.client.Dispatch("SAPI.SpVoice")
 
